@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url('SourceCodePro-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('SourceCodePro-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

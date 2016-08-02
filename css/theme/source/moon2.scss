@@ -1,0 +1,93 @@
+/**
+ * Solarized Dark theme for reveal.js.
+ * Author: Achim Staebler
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+@import url(../../lib/font/source-code-pro/source-code-pro.css);
+
+/**
+ * Solarized colors by Ethan Schoonover
+ */
+html * {
+	color-profile: sRGB;
+	rendering-intent: auto;
+}
+
+// Solarized colors
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+// Override theme settings (see ../template/settings.scss)
+$mainColor: $base1;
+$headingColor: $base2;
+$headingTextShadow: none;
+$backgroundColor: $base03;
+$linkColor: $blue;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: $magenta;
+
+$mainFont: 'Source Sans Pro';
+$mainFontSize: 60px;
+$headingFont: 'Source Sans Pro';
+$headingTextTransform: none;
+$headingFontWeight: 800;
+
+section[data-color-swapped="true"] {
+	p, h1, h2, h3, h4, h5, h6 {
+		color: $backgroundColor;
+	}
+}
+
+.reveal {
+	.slides {
+		text-align: left;
+		pre code {
+			font-size: 18px;
+			font-family: 'Source Code Pro', monospace;
+			line-height: 1.5;
+		}
+		code {
+			font-family: 'Source Code Pro', monospace;
+		}
+		img {
+			height: 100%;
+			width: 100%;
+		}
+		h2 sup {
+			font-size: 60px;
+		}
+	}
+	.slides [data-center] {
+		text-align: center;
+	}
+
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
