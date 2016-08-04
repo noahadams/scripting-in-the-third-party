@@ -405,6 +405,8 @@ var cleanXHR = iframe.contentWindow.XMLHttpRequest;
 
 ---
 
+<!-- .slide: data-center="true" -->
+
 ![CORS Support from caniuse.com](images/cors-support.png)
 
 ---
