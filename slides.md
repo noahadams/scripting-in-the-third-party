@@ -301,7 +301,14 @@ Note: Sites with lots of 3rd party JS are built from different things that are b
 
 ---
 
-### Building Styles Defensively
+### Building Web UI 
+### Defensively
+
+---
+
+* `<iframe>` it
+* `window.open()` it
+* Web components?
 
 ---
 
@@ -425,11 +432,9 @@ The environment of other peoples' pages puts the same demands on your tools and 
 
 ---
 
-<!-- .slide: data-center="true" -->
+<!-- .slide: data-background-image="images/require-error.png"  .slide: data-color-swapped="true"-->
 
-One day this happened:
-
-![Require error](images/require-error.png)
+## One day this happened
 
 ---
 
@@ -508,7 +513,7 @@ It is also very powerful: You can deliver new features across every site that in
 
 ---
 
-# Thanks!
-## Slides: [bit.ly/3rdpartyjs](https://bit.ly/3rdpartyjs)
-## [@noah_adams](https://www.twitter.com/noah_adams)
-## [GH:noahadams](https://github.com/noah_adams)
+## Thanks!
+### Slides: [bit.ly/3rdpartyjs](https://bit.ly/3rdpartyjs)
+#### [@noah_adams](https://www.twitter.com/noah_adams)
+#### [GH:noahadams](https://github.com/noah_adams)
