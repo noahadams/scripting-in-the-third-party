@@ -1,6 +1,9 @@
 ## Scripting in the 3<sup>rd</sup> Party
-#### Noah Adams
-#### [@noah_adams](https://www.twitter.com/noah_adams)
+##### __True Tales of Horror and Hope from Other People's Pages__
+
+Noah Adams
+
+[@noah_adams](https://www.twitter.com/noah_adams)
 
 ---
 
@@ -10,7 +13,7 @@
 
 ---
 
-* Software Engineer at [Mobify](images/logo-mobify-white.png)
+* Software Engineer at [Mobify](https://www.mobify.com/)
 * Analytics and data products for e-commerce
 * Billions of pageviews serviced (monthly)
 
@@ -43,7 +46,7 @@
 
 ---
 
-<!-- .slide: data-background-image="images/disqus.png" .slide: data-color-swapped="true" -->
+<!-- .slide: data-background-image="images/bazaarvoice.png" .slide: data-color-swapped="true" -->
 ## Bazaarvoice
 
 
@@ -59,13 +62,20 @@
 
 ---
 
+### What is a third party script?
+
+* Data collection and analytics
+* Applications that add functionality to websites
+* Integrations with other services
+
+---
+
 <!-- .slide: data-center="true" -->
 #### Background
 
-![Third Party Javascript by Ben vinegar and Anton Kovalyov](images/third-party-javascript-book.jpg)
+![Third Party Javascript by Ben Vinegar and Anton Kovalyov](images/third-party-javascript-book.jpg)
 
-Notes:
-Came out in 2013, and lots has changed since then, both in browser demographics, and tooling
+Note: Came out in 2013, and lots has changed since then, both in browser demographics, and tooling
 
 
 ---
@@ -78,6 +88,11 @@ Came out in 2013, and lots has changed since then, both in browser demographics,
 ---
 
 ## Integration and Delivery
+
+---
+
+## Don't Break
+## The Site
 
 ---
 
@@ -109,6 +124,8 @@ ga('send', 'pageview');
 
 ---
 
+<!-- .slide: data-center="true" -->
+
 Or you might be included with a tag manager
 
 ![Google Tag manager Snippet](images/google-tag-manager.png)
@@ -137,6 +154,24 @@ More as it's needed or convenient.
 ---
 
 ### How do we integrate with the publisher's site?
+
+---
+
+### Bake in configuration
+
+```javascript
+if (window.Mobify && window.Mobify.Ajs) {
+  var ajs_cfg = {"project": {"universal_analytics_id": "UA-55555555-5",
+    "features": {"messaging": {"site_id": "example", "source_url": "https://webpush-cdn.mobify.net/webpush-client-loader.min.js?site_id=example"},
+    "smart_content": {"business_slug": "example"},
+    "performance_measurement": {},
+    "content_parser": {"parser": "example"}, "sandy_adapter": {}},
+    "record_mobile_analytics": true,
+    "record_desktop_analytics": true, "slug": "example"},
+    "project_type": "core", "analytics_site_url": "//a.mobify.com"} || {};
+  window.Mobify.Ajs.init(ajs_cfg);
+}
+```
 
 ---
 
@@ -235,12 +270,16 @@ issues like per client configuration
 
 #### It can do anything to the front end.
 #### It can introduce:
-unauthorized access, data injection, XSS, etc.
+unauthorized access, XSS, credential leaks, credit card scraping, etc.
 
 ---
 
 <!-- .slide: data-background-image="images/missile-defense.gif" -->
 ## Building Defensively
+
+---
+
+### Don't Let the Site Break You
 
 ---
 
@@ -254,8 +293,11 @@ Web pages have become complex systems
 
 <!-- .slide: data-background-image="images/rube-goldberg-machine.gif" -->
 
-Note:
-Sites with lots of 3rd party JS are built from different things that are built non-uniformly and their interactions can be difficult to reason about
+Note: Sites with lots of 3rd party JS are built from different things that are built non-uniformly and their interactions can be difficult to reason about
+
+---
+
+<!-- .slide: data-background-image="images/skynet.gif" -->
 
 ---
 
@@ -324,12 +366,12 @@ Problems most web developers have long forgotten, are yours to contend with toda
 
 # 🔥🔥🔥
 ## 🚒 🚒
-Checkout broken for a customer, apparently by switching to XHR transport for analytics tracking
+Checkout broken for a customer, apparently by switching to XHR GET for tracking pixel from `<img>` element
 
 ---
 
 ### Root cause:
-A very ambitious patched XMLHttpRequest interception accidentally picking up analytics calls, rather than customer API calls.
+A very ambitious XMLHttpRequest interception code accidentally picking up analytics calls, and doing bad things to the page.
 
 ---
 
@@ -337,8 +379,6 @@ A very ambitious patched XMLHttpRequest interception accidentally picking up ana
 Don't trust
 
 #### `window.XMLHttpRequest`
-
-
 
 ---
 
@@ -376,7 +416,24 @@ The environment of other peoples' pages puts the same demands on your tools and 
 
 ---
 
-#### *A note about UMD modules
+## Don't Break
+## The Site
+
+---
+
+#### \*A note about modules and build tools
+
+---
+
+<!-- .slide: data-center="true" -->
+
+One day this happened:
+
+![Require error](images/require-error.png)
+
+---
+
+#### Universal Module Definition
 
 ```javascript
 (function (root, factory) {
@@ -431,6 +488,14 @@ can help you with this
 
 ---
 
+### What we covered
+
+* Integration and Delivery
+* Building Defensively
+* Tools, Testing and Iteration
+
+---
+
 # Final Notes
 
 ---
@@ -444,5 +509,6 @@ It is also very powerful: You can deliver new features across every site that in
 ---
 
 # Thanks!
+## Slides: [bit.ly/3rdpartyjs](https://bit.ly/3rdpartyjs)
 ## [@noah_adams](https://www.twitter.com/noah_adams)
 ## [GH:noahadams](https://github.com/noah_adams)

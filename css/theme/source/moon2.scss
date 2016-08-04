@@ -54,7 +54,7 @@ $mainFont: 'Source Sans Pro';
 $mainFontSize: 60px;
 $headingFont: 'Source Sans Pro';
 $headingTextTransform: none;
-$headingFontWeight: 800;
+$headingFontWeight: 600;
 
 section[data-color-swapped="true"] {
 	p, h1, h2, h3, h4, h5, h6 {
@@ -73,10 +73,10 @@ section[data-color-swapped="true"] {
 		code {
 			font-family: 'Source Code Pro', monospace;
 		}
-		img {
-			height: 100%;
-			width: 100%;
-		}
+		// img {
+		// 	height: 100%;
+		// 	width: 100%;
+		// }
 		h2 sup {
 			font-size: 60px;
 		}

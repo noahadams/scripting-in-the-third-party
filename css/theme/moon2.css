@@ -22,9 +22,6 @@ section[data-color-swapped="true"] p, section[data-color-swapped="true"] h1, sec
     line-height: 1.5; }
   .reveal .slides code {
     font-family: 'Source Code Pro', monospace; }
-  .reveal .slides img {
-    height: 100%;
-    width: 100%; }
   .reveal .slides h2 sup {
     font-size: 60px; }
 
@@ -66,7 +63,7 @@ body {
   margin: 0 0 20px 0;
   color: #eee8d5;
   font-family: "Source Sans Pro";
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
   text-transform: none;
